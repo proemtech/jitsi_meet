@@ -33,7 +33,7 @@ public class JitsiMeetPlugin() : FlutterPlugin, MethodCallHandler, ActivityAware
 
     // private val JITSI_RESUME_CHANNEL = "pip/fullscreen"
 
-    constructor(activity: Activity) : this() {
+    constructor(activity: Activity?) : this() {
         this.activity = activity
     }
 
