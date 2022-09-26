@@ -282,3 +282,16 @@ class JitsiMeetingOptions {
 */
 
 }
+
+/// Allow create a interface for web view and attach it as a child
+/// optional param `extraJS` allows setup another external JS libraries
+/// or Javascript embebed code
+class JitsiMeetConferencing extends StatelessWidget {
+  final List<String>? extraJS;
+  JitsiMeetConferencing({this.extraJS});
+
+  @override
+  Widget build(BuildContext context) {
+    return JitsiMeetPlatform.instance.buildView(extraJS!);
+  }
+}
