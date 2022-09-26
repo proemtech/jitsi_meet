@@ -7,7 +7,10 @@ class JitsiMeetListener {
   final Function({Map<dynamic, dynamic>? message})?
       onPictureInPictureTerminated;
   final Function({Map<dynamic, dynamic>? message})? onWhiteboardClicked;
+
   final Function(dynamic error)? onError;
+
+  final List<JitsiGenericListener>? genericListeners;
 
   JitsiMeetListener(
       {this.onConferenceWillJoin,
@@ -16,5 +19,14 @@ class JitsiMeetListener {
       this.onPictureInPictureWillEnter,
       this.onPictureInPictureTerminated,
       this.onWhiteboardClicked,
-      this.onError});
+      this.onError,
+      this.genericListeners});
+}
+
+/// Generic listener
+class JitsiGenericListener {
+  final String eventName;
+  final Function(dynamic message) callback;
+
+  JitsiGenericListener({required this.eventName, required this.callback});
 }
